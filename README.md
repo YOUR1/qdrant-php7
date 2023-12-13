@@ -1,6 +1,6 @@
 # Qdrant PHP Client
 
-[![Test Application](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml/badge.svg)](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml) [![codecov](https://codecov.io/github/your1/qdrant-php7/branch/main/graph/badge.svg?token=5K8FAI0C9B)](https://codecov.io/github/your1/qdrant-php7)
+[![Test Application](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml/badge.svg)](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml) [![codecov](https://codecov.io/github/your1/qdrant-php7/branch/main/graph/badge.svg?token=QGX34U9CY9)](https://codecov.io/github/your1/qdrant-php7)
 
 # Note; 
 ***This is a ported version for PHP7.4!***
