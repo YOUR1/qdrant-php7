@@ -17,9 +17,9 @@ class Point implements RequestModel
 
 	protected string $id;
 
-	protected array $payload;
+	protected ?array $payload = null;
 
-    public function __construct(string $id, VectorStructInterface $vector, ?array $payload = null)
+    public function __construct(string $id, $vector, ?array $payload = null)
     {
         if(is_array($vector)) {
             $vector = new VectorStruct($vector);

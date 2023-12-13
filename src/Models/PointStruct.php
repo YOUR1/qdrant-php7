@@ -63,7 +63,10 @@ class PointStruct
         return $point;
     }
 
-    public function getId(): int|string
+	/**
+	 * @return int|string
+	 */
+    public function getId()
     {
         return $this->id;
     }
