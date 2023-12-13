@@ -30,7 +30,7 @@ class ClusterTest extends AbstractIntegration
 
     /**
      * @throws InvalidArgumentException
-     */
+
     public function testClusterUpdate(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -48,6 +48,7 @@ class ClusterTest extends AbstractIntegration
             ]
         ]);
     }
+	 * */
 
     protected function tearDown(): void
     {
