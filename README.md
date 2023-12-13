@@ -2,7 +2,7 @@
 
 [![Test Application](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml/badge.svg)](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml) [![codecov](https://codecov.io/github/your1/qdrant-php7/branch/main/graph/badge.svg?token=5K8FAI0C9B)](https://codecov.io/github/your1/qdrant-php)
 
-This library is a PHP 7.x Client for Qdrant.  
+This library is a PHP 7.4 Client for Qdrant.  
 
 Qdrant is a vector similarity engine & vector database. It deploys as an API service providing search for the nearest 
 high-dimensional vectors. With Qdrant, embeddings or neural network encoders can be turned into full-fledged 
