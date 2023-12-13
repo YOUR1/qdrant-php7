@@ -1,6 +1,6 @@
 # Qdrant PHP Client
 
-[![Test Application](https://github.com/hkulekci/qdrant-php/actions/workflows/test.yaml/badge.svg)](https://github.com/hkulekci/qdrant-php/actions/workflows/test.yaml) [![codecov](https://codecov.io/github/hkulekci/qdrant-php/branch/main/graph/badge.svg?token=5K8FAI0C9B)](https://codecov.io/github/hkulekci/qdrant-php)
+[![Test Application](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml/badge.svg)](https://github.com/your1/qdrant-php7/actions/workflows/test.yaml) [![codecov](https://codecov.io/github/your1/qdrant-php7/branch/main/graph/badge.svg?token=5K8FAI0C9B)](https://codecov.io/github/your1/qdrant-php)
 
 This library is a PHP 7.x Client for Qdrant.  
 
