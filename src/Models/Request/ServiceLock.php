@@ -9,8 +9,13 @@ namespace Qdrant\Models\Request;
 class ServiceLock implements RequestModel
 {
 
-    public function __construct(protected bool $write, protected ?string $errorMessage = null)
+	protected bool $write;
+
+	protected ?string $errorMessage = null;
+    public function __construct(bool $write, ?string $errorMessage = null)
     {
+		$this->write = $write;
+		$this->errorMessage = $errorMessage;
     }
 
     public function toArray(): array

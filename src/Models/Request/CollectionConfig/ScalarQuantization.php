@@ -10,8 +10,16 @@ namespace Qdrant\Models\Request\CollectionConfig;
 
 class ScalarQuantization implements QuantizationConfig
 {
-    public function __construct(protected string $type, protected ?float $quantile = null, protected ?bool $alwaysRam = null)
+
+	protected string $type;
+	protected ?float $quantile = null;
+	protected ?bool $alwaysRam = null;
+
+    public function __construct(string $type, ?float $quantile = null, ?bool $alwaysRam = null)
     {
+		$this->type = $type;
+		$this->quantile = $quantile;
+		$this->alwaysRam = $alwaysRam;
     }
 
     public function toArray(): array

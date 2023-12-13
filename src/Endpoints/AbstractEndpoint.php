@@ -17,11 +17,17 @@ abstract class AbstractEndpoint
 {
     protected ?string $collectionName = null;
 
-    public function __construct(protected HttpClientInterface $client)
+	protected HttpClientInterface $client;
+
+    public function __construct(HttpClientInterface $client)
     {
+		$this->client = $client;
     }
 
-    public function setCollectionName(?string $collectionName): static
+	/**
+	 * @return $this
+	 */
+    public function setCollectionName(?string $collectionName)
     {
         $this->collectionName = $collectionName;
 

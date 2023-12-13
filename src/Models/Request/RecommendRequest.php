@@ -14,45 +14,65 @@ class RecommendRequest
 {
     use ProtectedPropertyAccessor;
 
+	protected array $positive;
+	protected array $negative;
+
     protected ?Filter $filter = null;
     protected ?string $using = null;
     protected ?int $limit = null;
     protected ?int $offset = null;
     protected ?float $scoreThreshold = null;
 
-    public function __construct(protected array $positive, protected array $negative = [])
+    public function __construct(array $positive, array $negative = [])
     {
+		$this->positive = $positive;
+		$this->negative = $negative;
     }
 
-    public function setFilter(Filter $filter): static
+	/**
+	 * @return $this
+	 */
+    public function setFilter(Filter $filter)
     {
         $this->filter = $filter;
 
         return $this;
     }
 
-    public function setScoreThreshold(float $scoreThreshold): static
+	/**
+	 * @return $this
+	 */
+    public function setScoreThreshold(float $scoreThreshold)
     {
         $this->scoreThreshold = $scoreThreshold;
 
         return $this;
     }
 
-    public function setUsing(string $using): static
+	/**
+	 * @return $this
+	 */
+    public function setUsing(string $using)
     {
         $this->using = $using;
 
         return $this;
     }
 
-    public function setLimit(int $limit): static
+	/**
+	 * @return $this
+	 */
+    public function setLimit(int $limit)
     {
         $this->limit = $limit;
 
         return $this;
     }
 
-    public function setOffset(int $offset): static
+	/**
+	 * @return $this
+	 */
+    public function setOffset(int $offset)
     {
         $this->offset = $offset;
 

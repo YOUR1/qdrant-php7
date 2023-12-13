@@ -10,8 +10,12 @@ namespace Qdrant\Models\Request\CollectionConfig;
 
 class BinaryQuantization implements QuantizationConfig
 {
-    public function __construct(protected ?bool $alwaysRam = null)
+
+	protected ?bool $alwaysRam = null;
+
+    public function __construct(?bool $alwaysRam = null)
     {
+		$this->alwaysRam = $alwaysRam;
     }
 
     public function toArray(): array

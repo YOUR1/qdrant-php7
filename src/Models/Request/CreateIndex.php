@@ -8,8 +8,18 @@ namespace Qdrant\Models\Request;
 
 class CreateIndex implements RequestModel
 {
-    public function __construct(protected string $fieldName, protected string $fieldSchema, protected array $schemaParams = [])
+
+	protected string $fieldName;
+
+	protected string $fieldSchema;
+
+	protected array $schemaParams;
+
+    public function __construct(string $fieldName, string $fieldSchema, array $schemaParams = [])
     {
+		$this->fieldName = $fieldName;
+		$this->fieldSchema = $fieldSchema;
+		$this->schemaParams = $schemaParams;
     }
 
     public function toArray(): array

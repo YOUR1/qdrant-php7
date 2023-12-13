@@ -11,8 +11,9 @@ use Qdrant\Domain\Assert;
 class GeoBoundingBox extends AbstractCondition implements ConditionInterface
 {
     protected const CONDITIONS = ['bottom_right', 'top_left'];
+	protected array $boundingBox;
 
-    public function __construct(string $key, protected array $boundingBox)
+    public function __construct(string $key, array $boundingBox)
     {
         parent::__construct($key);
         Assert::keysExists(
@@ -23,6 +24,8 @@ class GeoBoundingBox extends AbstractCondition implements ConditionInterface
 
         Assert::allKeyExists(array_values($boundingBox), 'lat', 'All geo locations need to provide "lat" key');
         Assert::allKeyExists(array_values($boundingBox), 'lon', 'All geo locations need to provide "lon" key');
+
+		$this->boundingBox = $boundingBox;
 
     }
 

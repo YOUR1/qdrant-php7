@@ -15,6 +15,8 @@ class SearchRequest
 {
     use ProtectedPropertyAccessor;
 
+	protected VectorStructInterface $vector;
+
     protected ?Filter $filter = null;
 
     protected array $params = [];
@@ -23,75 +25,105 @@ class SearchRequest
 
     protected ?int $offset = null;
 
-    protected bool|array|null $withVector = null;
+	/** @var bool|array|null */
+    protected $withVector = null;
 
-    protected bool|array|null $withPayload = null;
+	/** @var bool|array|null */
+    protected $withPayload = null;
 
     protected ?float $scoreThreshold = null;
 
     protected ?string $name = null;
 
-    public function __construct(protected VectorStructInterface $vector)
+    public function __construct(VectorStructInterface $vector)
     {
+		$this->vector = $vector;
     }
 
-    public function setName(string $name): static
+	/**
+	 * @return $this
+	 */
+    public function setName(string $name)
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function setFilter(Filter $filter): static
+	/**
+	 * @return $this
+	 */
+    public function setFilter(Filter $filter)
     {
         $this->filter = $filter;
 
         return $this;
     }
 
-    public function setScoreThreshold(float $scoreThreshold): static
+	/**
+	 * @return $this
+	 */
+    public function setScoreThreshold(float $scoreThreshold)
     {
         $this->scoreThreshold = $scoreThreshold;
 
         return $this;
     }
 
-    public function setParams(array $params): static
+	/**
+	 * @return $this
+	 */
+    public function setParams(array $params)
     {
         $this->params = $params;
 
         return $this;
     }
 
-    public function setLimit(int $limit): static
+	/**
+	 * @return $this
+	 */
+    public function setLimit(int $limit)
     {
         $this->limit = $limit;
 
         return $this;
     }
 
-    public function setOffset(int $offset): static
+	/**
+	 * @return $this
+	 */
+    public function setOffset(int $offset)
     {
         $this->offset = $offset;
 
         return $this;
     }
 
-    public function setWithPayload($withPayload): static
+	/**
+	 * @return $this
+	 */
+    public function setWithPayload($withPayload)
     {
         $this->withPayload = $withPayload;
 
         return $this;
     }
 
-    public function setWithVector($withVector): static
+	/**
+	 * @return $this
+	 */
+    public function setWithVector($withVector)
     {
         $this->withVector = $withVector;
 
         return $this;
     }
 
-    public function toArray(): array
+	/**
+	 * @return $this
+	 */
+    public function toArray()
     {
         $body = [
             'vector' => $this->vector->toSearchArray($this->name ?? $this->vector->getName()),

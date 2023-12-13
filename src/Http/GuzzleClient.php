@@ -19,8 +19,11 @@ class GuzzleClient implements HttpClientInterface
 {
     protected Client $client;
 
-    public function __construct(protected Config $config)
+	protected Config $config;
+
+    public function __construct(Config $config)
     {
+		$this->config = $config;
         $this->client = new Client([
             'base_uri' => $this->config->getDomain(),
             'http_errors' => true,

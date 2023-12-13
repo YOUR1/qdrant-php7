@@ -10,8 +10,13 @@ namespace Qdrant\Models\Request\CollectionConfig;
 
 class ProductQuantization implements QuantizationConfig
 {
-    public function __construct(protected string $compression, protected ?bool $alwaysRam = null)
+
+	protected string $compression;
+	protected ?bool $alwaysRam = null;
+    public function __construct(string $compression, ?bool $alwaysRam = null)
     {
+		$this->compression = $compression;
+		$this->alwaysRam = $alwaysRam;
     }
 
     public function toArray(): array

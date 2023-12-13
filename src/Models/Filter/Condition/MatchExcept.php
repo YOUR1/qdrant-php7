@@ -8,9 +8,12 @@ namespace Qdrant\Models\Filter\Condition;
 
 class MatchExcept extends AbstractCondition implements ConditionInterface
 {
-    public function __construct(string $key, protected array $values = [])
+
+	protected array $values = [];
+    public function __construct(string $key, array $values = [])
     {
         parent::__construct($key);
+		$this->values = $values;
     }
 
     public function toArray(): array

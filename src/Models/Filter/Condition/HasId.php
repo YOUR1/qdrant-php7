@@ -8,8 +8,11 @@ namespace Qdrant\Models\Filter\Condition;
 
 class HasId implements ConditionInterface
 {
-    public function __construct(protected array $ids)
+
+	protected array $ids;
+    public function __construct(array $ids)
     {
+		$this->ids = $ids;
     }
 
     public function toArray(): array

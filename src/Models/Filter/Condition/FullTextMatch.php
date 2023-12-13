@@ -8,8 +8,11 @@ namespace Qdrant\Models\Filter\Condition;
 
 class FullTextMatch extends AbstractCondition implements ConditionInterface
 {
-    public function __construct(string $key, protected string $text)
+
+	protected string $text;
+    public function __construct(string $key, string $text)
     {
+		$this->text = $text;
         parent::__construct($key);
     }
 
