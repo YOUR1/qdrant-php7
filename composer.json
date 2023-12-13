@@ -12,6 +12,11 @@
         "guzzlehttp/psr7": "^2.0",
         "webmozart/assert": "^1.11"
     },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "mockery/mockery": "*",
+        "phpunit/php-code-coverage": "*"
+    },
     "autoload": {
         "psr-4": {
             "Qdrant\\": "src/"
