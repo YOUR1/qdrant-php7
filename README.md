@@ -13,7 +13,7 @@ applications for matching, searching, recommending, and much more!
 You can install the client in your PHP project using composer:
 
 ```shell
-composer require hkulekci/qdrant
+composer require your1/qdrant
 ```
 
 An example to create a collection :
